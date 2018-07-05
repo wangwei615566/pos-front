@@ -1,22 +1,18 @@
-import fetch from '@/config/fetch'
-
+import {axiosPost,axiosGet} from "../config/fetch"
 /**
  * 登陆
  */
-
-export const login = data => fetch('/admin/login', data, 'POST');
-
+export const login = data => axiosPost('/system/user/login.htm', data);
 /**
  * 退出
  */
-
-export const signout = () => fetch('/admin/singout');
+export const loginOut = () => axiosGet('/system/user/loginOut.htm');
 
 /**
  * 获取用户信息
  */
 
-export const getAdminInfo = () => fetch('/admin/info');
+export const getAdminInfo = () => fetch('/modules/manage/system/user/find.htm');
 
 /**
  * api请求量

@@ -23,7 +23,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8002,
+    port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -40,9 +40,10 @@ module.exports = {
         '/promotion',
         '/eus',
         '/payapi',
-        '/admin',
+        '/system',
         '/statis',
         '/img',
+        '/modules',
     ],
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
