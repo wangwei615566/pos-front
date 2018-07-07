@@ -7,11 +7,17 @@ export const login = data => axiosPost('/system/user/login.htm', data);
  * 退出
  */
 export const loginOut = () => axiosGet('/system/user/loginOut.htm');
-
+/**
+ * 获取订单列表
+ */
+export const orderList = data => axiosPost('/manage/order/search/list.htm', data);
+/**
+ * 修改订单列表
+ */
+export const orderSave = data => axiosPost('/manage/order/search/save.htm', data);
 /**
  * 获取用户信息
  */
-
 export const getAdminInfo = () => fetch('/modules/manage/system/user/find.htm');
 
 /**
@@ -192,12 +198,6 @@ export const getUserList = data => fetch('/v1/users/list', data);
  */
 
 export const getUserCount = data => fetch('/v1/users/count', data);
-
-/**
- * 获取订单列表
- */
-
-export const getOrderList = data => fetch('/bos/orders', data);
 
 /**
  * 获取订单数量

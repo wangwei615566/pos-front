@@ -27,7 +27,6 @@
 <script>
     import {login, getAdminInfo} from '@/api/getData'
     import {mapActions, mapState} from 'vuex'
-    import {axiosPost} from "../config/fetch";
 
     export default {
         data() {

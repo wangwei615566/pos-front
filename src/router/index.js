@@ -37,7 +37,7 @@ const routes = [
 		},{
 			path: '/addGoods',
 			component: addGoods,
-			meta: ['添加数据', '添加商品'],
+			meta: ['商品管理', '添加商品'],
 		},{
 			path: '/userList',
 			component: userList,
@@ -45,11 +45,11 @@ const routes = [
 		},{
 			path: '/foodList',
 			component: foodList,
-			meta: ['数据管理', '商品列表'],
+			meta: ['商品管理','商品列表'],
 		},{
 			path: '/orderList',
 			component: orderList,
-			meta: ['数据管理', '订单列表'],
+			meta: ['订单管理'],
 		},{
 			path: '/adminList',
 			component: adminList,

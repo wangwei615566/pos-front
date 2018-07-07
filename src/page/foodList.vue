@@ -4,43 +4,7 @@
         <div class="table_container">
             <el-table
                 :data="tableData"
-                @expand='expand'
-                :expand-row-keys='expendRow'
-                :row-key="row => row.index"
                 style="width: 100%">
-                <el-table-column type="expand">
-                  <template scope="props">
-                    <el-form label-position="left" inline class="demo-table-expand">
-                      <el-form-item label="食品名称">
-                        <span>{{ props.row.name }}</span>
-                      </el-form-item>
-                      <el-form-item label="餐馆名称">
-                        <span>{{ props.row.restaurant_name }}</span>
-                      </el-form-item>
-                      <el-form-item label="食品 ID">
-                        <span>{{ props.row.item_id }}</span>
-                      </el-form-item>
-                      <el-form-item label="餐馆 ID">
-                        <span>{{ props.row.restaurant_id }}</span>
-                      </el-form-item>
-                      <el-form-item label="食品介绍">
-                        <span>{{ props.row.description }}</span>
-                      </el-form-item>
-                      <el-form-item label="餐馆地址">
-                        <span>{{ props.row.restaurant_address }}</span>
-                      </el-form-item>
-                      <el-form-item label="食品评分">
-                        <span>{{ props.row.rating }}</span>
-                      </el-form-item>
-                      <el-form-item label="食品分类">
-                        <span>{{ props.row.category_name }}</span>
-                      </el-form-item>
-                      <el-form-item label="月销量">
-                        <span>{{ props.row.month_sales }}</span>
-                      </el-form-item>
-                    </el-form>
-                  </template>
-                </el-table-column>
                 <el-table-column
                   label="食品名称"
                   prop="name">
@@ -123,7 +87,7 @@
 					      label="价格">
 					    </el-table-column>
 					    <el-table-column label="操作" >
-					    <template scope="scope"> 
+					    <template scope="scope">
 					        <el-button
 					          size="small"
 					          type="danger"
@@ -138,8 +102,8 @@
                 <el-button type="primary" @click="updateFood">确 定</el-button>
               </div>
             </el-dialog>
-			
-           
+
+
             <el-dialog title="添加规格" v-model="specsFormVisible">
 			  	<el-form :rules="specsFormrules" :model="specsForm">
 				    <el-form-item label="规格" label-width="100px" prop="specs">
@@ -309,10 +273,10 @@
                 this.selectTable = {...row, ...{restaurant_name: restaurant.name, restaurant_address: restaurant.address, category_name: category.name}};
 
                 this.selectMenu = {label: category.name, value: row.category_id}
-                this.tableData.splice(row.index, 1, {...this.selectTable}); 
+                this.tableData.splice(row.index, 1, {...this.selectTable});
                 this.$nextTick(() => {
                     this.expendRow.push(row.index);
-                })  
+                })
                 if (type == 'edit' && this.restaurant_id != row.restaurant_id) {
                 	this.getMenu();
                 }

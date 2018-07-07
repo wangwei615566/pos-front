@@ -35,7 +35,7 @@
     	},
 		methods: {
 			...mapActions(['getAdminData']),
-			async handleCommand(command) {
+			handleCommand(command) {
 				if (command == 'home') {
 					this.$router.push('/manage');
 				}else if(command == 'singout'){
